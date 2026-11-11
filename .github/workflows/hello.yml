@@ -1,0 +1,13 @@
+name: hello
+on:
+  workflow_dispatch:
+    inputs:
+      build_id:
+        description: caller id
+        required: true
+permissions: {}
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "build_id=${{ inputs.build_id }} actor=${{ github.actor }} actor_id=${{ github.actor_id }}"
